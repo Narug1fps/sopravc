@@ -14,17 +14,34 @@ Este arquivo já esta pronto e você pode mandar para quem quiser
 </head>
 
 <body>
-    <div id="conteudo">
+<div>
+    <div class="conteudo">
         <h2>Aceita namorar comigo?</h2>
-        <div style="margin: auto;width: 170px;">
-            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
-            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
-        </div>
+       <div style="margin: auto;width: 170px;">
+           
+                <div class="audio"><button style="position: fixed;display: block;" class="btn" onclick="sim(this)">SIM</button></div> <br> <br>
+                <button class="btn" class="n" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+       </div>
+       <div class="audio">
+        <audio src="X2Download.app - Careless Whisper - 8D Audio (128 kbps).mp3"></audio>
+       </div>
+        
     </div>
+       
+
 </body>
 <style>
+    h2 {
+        text-align: center;}
+    
+    body{
+background-image: url(Imagem\ do\ WhatsApp\ de\ 2023-09-28\ à\(s\)\ 22.00.43_f3d39512.jpg);
+    }
+    .n{
+left: 400px;
+    }
     #conteudo {
-        background: #ff0080;
+        background: #ff7a7a;
         width: 100%;
         height: 100%;
         position: fixed;
@@ -46,17 +63,28 @@ Este arquivo já esta pronto e você pode mandar para quem quiser
 </style>
 
 <script>
+  
     function sim() {
         alert("Você aceitou namorar comigo! :)");
         // redireciona para um URL após clicar no SIM
-        location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+        
+       
     }
+    const button = document.querySelector('.audio')
+           button.addEventListener('click', function(){
+                const audio = document.querySelector('audio')
+                audio.play()
+                
+            }
+            )
+    
+                
 
-    function desvia(btn) {
+            function desvia(btn) {
         // btn declarado na função
         btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
+        btn.style.bottom = geraPosicao(10, 91);
+        btn.style.left = geraPosicao(10, 91);
         console.log('opa, desviei...');
     }
 
@@ -64,8 +92,7 @@ Este arquivo já esta pronto e você pode mandar para quem quiser
         return (Math.random() * (max - min) + min) + "%";
     }
 
-    /* Apague se quiser, isso apenas escreve MTHS1901 e o link para o tutorial no console */
-    const o = "MTHS1901", e = 90, l = "bold"; console.log(`%c${o}`, "font-size: 90px; font-weight: bold; background: linear-gradient(90deg, red, yellow);"), console.log("Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4");
+    
 
 </script>
 
