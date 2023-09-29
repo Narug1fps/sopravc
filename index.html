@@ -1,47 +1,32 @@
 <!DOCTYPE html>
-<!-- 
-Código escrito por MTHS1901 em um tutorial no YouTube
-Confira: https://www.youtube.com/watch?v=zxxB9SFh9p4
-Este arquivo já esta pronto e você pode mandar para quem quiser
--->
+
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namora comigo?</title>
+    <title>Namora Comigo?</title>
+    
 </head>
 
 <body>
-<div>
-    <div class="conteudo">
+    <div id="conteudo">
         <h2>Aceita namorar comigo?</h2>
-       <div style="margin: auto;width: 170px;">
-           
-                <div class="audio"><button style="position: fixed;display: block;" class="btn" onclick="sim(this)">SIM</button></div> <br> <br>
-                <button class="btn" class="n" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
-       </div>
-       <div class="audio">
-        <audio src="X2Download.app - Careless Whisper - 8D Audio (128 kbps).mp3"></audio>
-       </div>
-        
-    </div>
-       
+        <div style="margin: auto;width: 170px;">
+            <button style="position: fixed;display: block;" class="btn" onclick="sim()" >SIM</button>
+            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+        </div>
 
+    </div>
+    <audio  src="audio.mp3"></audio> 
+    
 </body>
 <style>
-    h2 {
-        text-align: center;}
-    
-    body{
-background-image: url(Imagem\ do\ WhatsApp\ de\ 2023-09-28\ à\(s\)\ 22.00.43_f3d39512.jpg);
-    }
-    .n{
-left: 400px;
-    }
+    h2 { text-align: center;}
+     body{ background-image: url(Imagem\ do\ WhatsApp\ de\ 2023-09-28\ à\(s\)\ 22.00.43_f3d39512.jpg); }
     #conteudo {
-        background: #ff7a7a;
+    
         width: 100%;
         height: 100%;
         position: fixed;
@@ -61,39 +46,24 @@ left: 400px;
         border-radius: 5px;
     }
 </style>
+<script > 
+const audio = document.querySelector('audio')
 
-<script>
-  
-    function sim() {
-        alert("Você aceitou namorar comigo! :)");
-        // redireciona para um URL após clicar no SIM
-        
-       
-    }
-    const button = document.querySelector('.audio')
-           button.addEventListener('click', function(){
-                const audio = document.querySelector('audio')
-                audio.play()
-                
-            }
-            )
-    
-                
+function sim() {
+audio.play();
+alert("Você aceitou namorar comigo! :)");
+};
 
-            function desvia(btn) {
-        // btn declarado na função
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 91);
-        btn.style.left = geraPosicao(10, 91);
-        console.log('opa, desviei...');
-    }
+function desvia(btn) {
+    // btn declarado na função
+    btn.style.position = 'absolute';
+    btn.style.bottom = geraPosicao(10, 90);
+    btn.style.left = geraPosicao(10, 90);
+    console.log('opa, desviei...');
+}
 
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-
-    
-
+function geraPosicao(min, max) {
+    return (Math.random() * (max - min) + min) + "%";
+}
 </script>
-
 </html>
